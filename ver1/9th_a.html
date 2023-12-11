@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var input=input.split('')
+  var result='';
+  let answer = input.forEach(function(v,i){
+    if (v==='A') {
+      result +='#'
+    } else {
+      result += v
+    }
+  })
+
+  document.write(result)
+}
+solution('BANANA');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(a, b, c){
+  var result;
+  if (a<b && a<c){
+    result=a;
+  } else if (b<c && b<a){
+    result=b;
+  } else {
+    result=c;
+  }
+  document.write(result)
+}
+solution(6,5,11);
+    </script>
+  </body>
+</html>

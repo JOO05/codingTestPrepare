@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(day,input){
+  var result=0;
+  for (var i=0;i<input.length;i++){
+    if (input[i]%10===day){
+      result++
+    }
+  }
+  document.write(result)
+}
+var arr = [25,23,11,47,53,17,33];
+solution(3,arr);
+    </script>
+  </body>
+</html>
