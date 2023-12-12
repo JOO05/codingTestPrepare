@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var result = [];
+  for (var x of input) {
+    if (!result.includes(x)) {
+      result.push(x)
+    }
+  }
+  document.write(result)
+}
+let arr=["good", "time", "good", "time", "student"];
+solution(arr);
+    </script>
+  </body>
+</html>

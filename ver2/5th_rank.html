@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과(fail)</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var result=new Array(input.length).fill(1);
+  for (var i=0;i<input.length;i++){
+    for (var j=0;j<input.length;j++){
+      if (input[j]>input[i]){
+        result[i]++
+      }
+  }
+  }
+  document.write(result)
+}
+solution([87,89,92,100,76]);
+solution([87,87,87,100,76]);
+    </script>
+  </body>
+</html>

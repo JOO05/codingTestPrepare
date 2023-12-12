@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var result=0
+  result+=(input[0]===1?1:0);
+  var a=0;
+  for (var i=1;i<input.length;i++){
+    if(input[i]===1) a++ 
+    else a=0 
+    result+=a
+  }
+  
+  document.write(result)
+}
+var arr = [1,0,1,1,1,0,0,1,1,0]
+solution(arr);
+    </script>
+  </body>
+</html>

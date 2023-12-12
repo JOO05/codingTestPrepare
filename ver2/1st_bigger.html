@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var min = Number.MIN_SAFE_INTEGER
+  input.unshift(min) // 맨 앞에 값 추가
+  var result=[];
+  for (var i=0;i<input.length;i++){
+    if (input[i]>min && input[i]>input[i-1]){
+      result.push(input[i])
+    }
+  }
+
+  document.write(result)
+}
+var arr = [7,3,9,5,6,12]
+solution(arr);
+    </script>
+  </body>
+</html>

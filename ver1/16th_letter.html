@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var answer = ''
+  for (var x of input) {
+    if (!answer.split('').includes(x)) {
+      answer+=x
+    }
+  }
+  document.write(answer)
+}
+solution('ksekkset');
+    </script>
+  </body>
+</html>

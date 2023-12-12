@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var count = 0
+  for (var x of input){
+    if (x.charCodeAt()>=65 && x.charCodeAt()<=90) count++
+  }
+  document.write(count)
+}
+solution('KoreaTimeGood');
+    </script>
+  </body>
+</html>

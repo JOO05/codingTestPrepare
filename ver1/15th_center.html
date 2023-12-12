@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var len = input.length
+  if (len%2===0){
+    input=input.substr(len/2-1,2)
+  } else {
+    input=input.substr(Math.floor(len/2),1)
+  }
+  document.write(input)
+}
+solution('study');
+    </script>
+  </body>
+</html>

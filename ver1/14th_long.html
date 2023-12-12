@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var result='';
+  for (var x=0;x<input.length;x++){
+    if (input[x].length>=result.length){
+      result=input[x]
+    }
+  }
+
+  document.write(result)
+}
+var arr = ["teacher","time","student","beautiful","good"]
+solution(arr);
+    </script>
+  </body>
+</html>

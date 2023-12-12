@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  // 가로 합 세로 합 대각선 합 전부를 따로 구하고, 그것들을 전부 배열에 넣어서 제일 큰 값을 출력한다.
+  var result=[];
+  var diagonal1=0,diagonal2=0;
+
+  for (var i=0;i<input.length;i++){
+    var width=0,height=0;
+    for (var j=0;j<input[i].length;j++){
+      width+=input[i][j]
+      height+=input[j][i]
+    }
+    result.push(width,height)
+    diagonal1+=input[i][i]
+    diagonal2+=input[i][input.length-1-i]
+  }
+  result.push(diagonal1,diagonal2)
+  document.write(Math.max.apply(null,result))
+}
+solution([[10, 13, 10, 12, 15], 
+[12, 39, 30, 23, 11],
+[11, 25, 50, 53, 15],
+[19, 27, 29, 37, 27],
+[19, 13, 30, 13, 19]]);
+    </script>
+  </body>
+</html>

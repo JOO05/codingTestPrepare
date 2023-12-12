@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  for (var i=0;i<input.length;i++){
+    input[i].unshift(0)
+    input[i].push(0)
+  }
+  input.unshift(new Array(input.length+2).fill(0))
+  input.push(new Array(input.length+1).fill(0))
+  // 주변이 0으로 둘러싸인 배열 완성
+
+  var count=0;
+  for (var i=1;i<input.length-1;i++){
+    for (var j=1;j<input[i].length-1;j++){
+      if (input[i][j]===Math.max(input[i][j],input[i][j+1],input[i][j-1],input[i+1][j],input[i-1][j])) count++
+    }
+  }
+  // i와 j 모두 인덱스값 1~5까지만 돈다. 0과 6은 제외된다.
+  document.write(count)
+}
+solution([[5, 3, 7, 2, 3], 
+[3, 7, 1, 6, 1],
+[7, 2, 5, 3, 4],
+[4, 3, 6, 4, 1],
+[8, 7, 3, 5, 2]]);
+    </script>
+  </body>
+</html>
+
