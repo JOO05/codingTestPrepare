@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  input=input.toLowerCase();
+  var result='YES'
+  for (var i=0;i<Math.floor(input.length/2);i++){
+    if(input[i]!==input[input.length-1-i]){
+      result='NO'
+      break;
+    }
+  }
+  document.write(result)
+}
+solution('gofoG');
+    </script>
+  </body>
+</html>

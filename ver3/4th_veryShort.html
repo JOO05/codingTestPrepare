@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과(fail)</title>
+  </head>
+  <body>
+    <script>
+function solution(word,letter){
+  var result=[], p=1000;
+
+  for (var i=0;i<word.length;i++){
+    if (word[i]===letter){
+      p=0
+    } else {
+      p++
+    }
+    result.push(p)
+  }
+
+  p=1000
+  for (var j=word.length-1;j>=0;j--){
+    if (word[j]===letter){
+      p=0
+    } else {
+      p++
+      if (p<result[j]) result.splice(j,1,p)
+    }
+  }
+  document.write(result)
+}
+solution("teachermode", 'e');
+    </script>
+  </body>
+</html>

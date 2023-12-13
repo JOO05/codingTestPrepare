@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  input=input.toLowerCase().replace(/[^0-9]/g,"")
+  var result=''
+  var boolean=true
+
+  for (var i=0;i<input.length;i++){
+    if (input[i]!=='0' || boolean===false){
+      result+=input[i]
+      boolean=false
+    } 
+  }
+  document.write(result)
+}
+solution('g0en2T0s8eSoft');
+    </script>
+  </body>
+</html>
