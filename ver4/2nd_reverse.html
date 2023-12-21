@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  // 뒤집는다. 뒤집은 걸 숫자로 바꾼다.
+  var sum=[]
+  for (x of input){
+    let tempSum=[], tmp=x;
+      while(tmp){
+          tempSum.push(tmp%10);
+          tmp=Math.floor(tmp/10);
+      }
+      sum.push(parseInt(tempSum.join('')))
+  }
+
+  // 소수를 필터링한다.
+  var answer=[]
+  for (x of sum) {
+    var isOnly = true
+    if (x!==1){
+    for (var i=2;i<x;i++){
+      if (x%i===0) {
+        isOnly=false
+      }
+    }} else{
+      isOnly=false
+    }
+    if (isOnly) answer.push(x)
+  }
+  document.write(answer)
+}
+solution([32,55,20,62,250,370,200,30,100]);
+    </script>
+  </body>
+</html>

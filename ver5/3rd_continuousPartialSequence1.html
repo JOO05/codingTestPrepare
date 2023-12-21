@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(num,input){
+  var count=0;
+  let lt=rt=0
+  var sum=0;
+  while (rt<input.length){
+    if (sum===num){
+      count++
+      sum-=input[lt++]
+    } else if (sum<num){ // 6보다 작을 때
+      sum+=input[rt++]
+    } else { // 6보다 클 때
+      sum-=input[lt++]
+    }
+  }
+  document.write(count)
+}
+solution(6,[1, 2, 1, 3, 1, 1, 1, 2])
+    </script>
+  </body>
+</html>

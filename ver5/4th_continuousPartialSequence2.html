@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(m,input){
+  var count=0
+  for(let lt=0; lt<input.length; lt++){
+    var sum=0
+    for(let rt=lt; rt<input.length; rt++){
+      sum+=input[rt]
+      if (sum>m) break
+      count++
+    }
+  }
+  document.write(count)
+}
+solution(5,[1, 3, 1, 2, 3]);
+
+    </script>
+  </body>
+</html>

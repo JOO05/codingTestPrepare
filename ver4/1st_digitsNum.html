@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과(fail)</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var result
+  var arr=[]
+  var index=0
+  for (x of input){
+    var sum=0
+    // 숫자를 배열로 쪼개는 법
+    x = Array.from(String(x), (arg) => Number(arg));
+    for (var i=0;i<x.length;i++){
+      sum+=x[i]
+    }
+    arr.push(sum)
+    x=Number(x.join(''))
+
+    var numMax=Math.max.apply(null,arr)
+    var s = arr.indexOf(numMax,index)
+
+    if (Math.max.apply(null,arr)===sum){ // sum 값이 같은 경우가 있을 때
+      if (input[s]<x) {
+        result=x
+        index++
+      }
+    } else {
+      result=input[s]
+    }
+  }
+  document.write(result)
+}
+solution([117,460,603,40,137,128]);
+    </script>
+  </body>
+</html>

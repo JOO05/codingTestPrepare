@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(a,b){
+  alen=a.length
+  blen=b.length
+  let p1=p2=0
+  var result=[];
+  while(blen>p2 && alen>p1){
+    if(a[p1]<b[p2]){
+      result.push(a[p1])
+      p1++
+    } else {
+      result.push(b[p2])
+      p2++
+    }
+  }
+
+  if (p1<alen) {
+    for (var i=p1;i<alen;i++){
+      result.push(a[i])
+    }
+  } else if (p2<blen) {
+    for (var i=p2;i<blen;i++){
+      result.push(b[i])
+    }
+  }
+
+  document.write(result)
+}
+
+solution([1, 3, 5],[2, 3, 6, 7, 9])
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과(fail)</title>
+  </head>
+  <body>
+    <script>
+function solution(limit, boundary){
+  let answer=0 // 나중에 구할 학생 수
+  let n=boundary.length
+  boundary.sort((a,b)=>(a[0]+a[1])-(b[0]+b[1]))
+
+  for (var i=0;i<n;i++){
+    let money=limit-boundary[i][0]/2-boundary[i][1] // 할인받고 산 것에서 뺀 예산
+    var count=1; // 하나 이미 샀으므로 1부터 시작
+    for (var j=0;j<n;j++){
+      if(j!==i && (boundary[j][0]/2+boundary[j][1])>money) break
+      if(j!==i && (boundary[j][0]/2+boundary[j][1])<=money) {
+        money-=(boundary[j][0]/2+boundary[j][1])
+        count++
+      }
+
+      // j번째 것이 i의 값과 같으면 안된다, 합한 금액이 남은 예산보다 크면 break 한다.
+    }
+    answer=Math.max(answer,count) // 기존의 값과 새로 들어온 값 중 더 큰 것은?
+  }
+  document.write(answer)
+}
+
+solution(28,[[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]]);
+    </script>
+  </body>
+</html>
