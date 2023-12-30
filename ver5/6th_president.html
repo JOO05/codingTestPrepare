@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var result={}
+for (var i=0;i<input.length;i++){
+    var vote = input[i];
+    if (vote in result==false) {
+      result[vote]=0
+  } 
+}
+var answer = Number.MIN_SAFE_INTEGER
+for (var i=0;i<input.length;i++){
+  result[input[i]]++
+}
+/* 단일 객체 key에서 max 구하기 */
+result = Object.keys(result).map(function (key) { return result[key]; });
+document.write(Math.max.apply(null, result))
+}
+solution('BACBACCACCBDEDE');
+    </script>
+  </body>
+</html>

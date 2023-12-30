@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과(failed)</title>
+  </head>
+  <body>
+    <script>
+function compareMaps(arr1,arr2){
+  if (arr1.size!==arr2.size) return false;
+  // 길이 다음에는 key와 value 값이 일치하는지 비교
+}
+
+function solution(s,t){
+  var tLen=t.length;
+  var sLen=s.length;
+
+   // t 문자열 갯수 카운팅 a 1 b 1 c 1
+  var tH=new Map();
+  for(let x of t){
+      if(tH.has(x)) tH.set(x, tH.get(x)+1);
+      else tH.set(x, 1);
+  }
+
+  // 처음 배열 만들기 b 1 a 1 c 1
+  var ssH=new Map();
+  for (var i=0;i<tLen;i++) {
+    if(ssH.has(s[i])) ssH.set(s[i], ssH.get(s[i])+1);
+    else ssH.set(s[i], 1);
+  }
+
+  for (var i=tLen;i<sLen;i++) {
+    // 비교하기
+
+    // 새로운 거 더하기 
+    if(ssH.has(s[i])) ssH.set(s[i], ssH.get(s[i])+1);
+    else ssH.set(s[i], 1);
+    // 지난 거 빼기
+    
+  }
+}
+solution("bacaAacba","abc");
+    </script>
+  </body>
+</html>

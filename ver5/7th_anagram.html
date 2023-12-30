@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(a,b){
+  var result='yes';
+  let sH1=new Map()
+  for(let x of a){
+      if(sH1.has(x)) sH1.set(x, sH1.get(x)+1);
+      else sH1.set(x, 1);
+  }
+  for(let x of b){
+    if (sH1.get(x)<0) result='no'
+    sH1.set(x, sH1.get(x)-1)
+  }
+  document.write(result)
+}
+solution("AbaAeCe","baeeACA");
+    </script>
+  </body>
+</html>
