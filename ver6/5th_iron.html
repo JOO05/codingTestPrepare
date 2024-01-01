@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var result=0, stack=[];
+
+  for (var i=0;i<input.length;i++) {
+    if (input[i]==="(") stack.push("(")
+    else {
+      stack.pop()
+      if (input[i-1]==="(") result+=stack.length
+      else  result++
+    }
+  }
+  document.write(result)
+}
+solution("()(((()())(())()))(())");
+    </script>
+  </body>
+</html>

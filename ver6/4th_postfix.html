@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(input){
+  var result=0,stack=[]
+  for (var i=0;i<input.length;i++) {
+    if (!isNaN(input[i])) {stack.push(Number(input[i])) }
+    else {
+      var a=stack.pop(),b=stack.pop()
+
+      if (input[i]==='+') stack.push(b+a)
+      if (input[i]==='-') stack.push(b-a)
+      if (input[i]==='*') stack.push(b*a)
+      if (input[i]==='/') stack.push(b/a)
+    }
+  }
+  document.write(stack)
+}
+solution('352+*9-');
+    </script>
+  </body>
+</html>
