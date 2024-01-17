@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과(failed)</title>
+  </head>
+  <body>
+    <script>
+function solution(total,check){
+  var arr=[]
+  for (var i=1;i<=total;i++){arr.push(i)}
+  // let queue=Array.from({length:total}, (v, i)=>i+1); 와 같다.
+  while(arr.length){ // 답까지 빠져나오고 나면 while이 끝난다.
+    for (let i=1;i<check;i++) arr.push(arr.shift())
+    // shift로 없어진 값을 바로 push, 두 번 반복된다. 그 다음 3번째는 그냥 없어진다.
+    arr.shift()
+    if(arr.length===1) var answer=arr.shift()
+  }
+  document.write(answer)
+}
+solution(8,3);
+    </script>
+  </body>
+</html>
