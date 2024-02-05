@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+    function solution(s, e) {
+      let answer = 0;
+      let ch = Array.from({ length: 10001 }, () => 0); 
+      // 체크 배열
+      let dis = Array.from({ length: 10001 }, () => 0); 
+      // distance 베열, 점프 횟수가 지정되는 곳
+      let queue = [];
+      queue.push(s);
+      ch[s] = 1; // 출발 지점에 체크
+      dis[s] = 0; // 0으로 단계 초기화
+      while (queue.length) {
+        let x = queue.shift();
+        for (let nx of [x - 1, x + 1, x + 5]) {
+          if (nx === e) return dis[x] + 1;
+          // 종착점에 도착 시 return 하면 종료됨
+          if (nx > 0 && nx <= 10000 && ch[nx] === 0) {
+            ch[nx] = 1; // 체크
+            queue.push(nx);
+            dis[nx] = dis[x] + 1; // nx 거리, 부모 노드의 거리값 +1
+          }
+        }
+      }
+      return answer;
+    }
+    console.log(solution(8, 3));
+    </script>
+  </body>
+</html>

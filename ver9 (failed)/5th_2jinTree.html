@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(){
+  let answer="";
+  let queue=[]
+  queue.push(1) // 루트 노드
+  while (queue.length){
+    let v=queue.shift()
+    answer+=v+" " // answer에 queue 누적
+    for (let nv of [v*2,v*2+1]) {
+      if (nv>7) continue; // 아래 push 안하고 for 문이 돈다
+      queue.push(nv)
+    }
+  }
+  document.write(answer)
+}
+solution();
+
+</script>
+  </body>
+</html>
