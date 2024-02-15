@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(m, input) {
+  // m이 걸리는 시간
+  let dy = Array.from({ length: m + 1 }, () => 0);
+  dy[0] = 0;
+  for ([score,time] of input) {
+    for (var j = m; j >= time; j--) {
+      dy[j] = Math.max(dy[j-time]+score, dy[j]);
+    }
+  }
+  document.write(dy[m]);
+}
+solution(20, [[10, 5], [25, 12], [15, 8], [6, 3], [7, 4]]);
+    </script>
+  </body>
+</html>

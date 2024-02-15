@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>출력결과</title>
   </head>
   <body>
     <script>
-function solution(input){
-  let answer;
-  document.write(answer)
+function solution(n) {
+  let q = []
+  q[1]=1
+  q[2]=2
+  if (n>2) {
+    for (let i=3;i<=n;i++) {
+      q[i]=q[i-2]+q[i-1]
+    }
+  }
+  document.write(q[n]);
 }
-solution(1);
-
-</script>
+solution(7);
+    </script>
   </body>
 </html>

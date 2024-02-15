@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(m,arr) {
+  let dy=Array.from({length:m+1}, ()=>1000);
+  dy[0]=0;
+  for (i of arr) {
+    for (var j=i;j<=m;j++){
+      dy[j]=Math.min(dy[j-i]+1,dy[j])
+    }
+  }
+  document.write(dy[m])
+}
+solution(15, [1, 2, 5]);
+    </script>
+  </body>
+</html>

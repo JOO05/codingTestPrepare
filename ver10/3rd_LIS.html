@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+function solution(arr) {
+  let answer=0,n=arr.length;
+  let dy = Array.from({ length: n }, () => 0);
+  dy[0]=1
+  for (let i=1;i<n;i++) {
+    // dy[1]일 때는 i가 1이고 j가 i-1부터 0까지 for문이 돈다. 
+    // i번째 숫자보다 작은 것을 발견해야 한다. 없으면 그냥 끝난다.
+    let max=0 // for문 돌면서 j보다 작은 i가 하나도 없을 수 있음, arr[5]같이
+    for(let j=i-1;j>=0;j--){
+      if (arr[j]<arr[i] && dy[j]>max) max=dy[j]
+      // j번째가 i번째보다 작아야지만 j가 앞의 항이 될 수 있음
+      // 수열의 길이 (dy 값)를 비교하여 제일 큰 것에 +1
+    }
+    dy[i]=max+1
+    answer=Math.max(answer,dy[i])
+  }
+  document.write(answer);
+}
+  solution([5, 3, 7, 8, 6, 2, 9, 4]);
+    </script>
+  </body>
+</html>
